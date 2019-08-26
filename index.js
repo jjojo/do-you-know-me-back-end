@@ -165,7 +165,6 @@ io.on('connection', (socket) => {
   })
 
   socket.on('acceptedQuestion', (question) => {
-    console.log("question accepted from:", socket.id , question, socket.rooms)
     const room = Object.keys(socket.rooms)[0];
     addQuestion(room, socket.id, question);
     const questionsLeftToAnswer = pickQuestions(room, socket.id)
